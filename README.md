@@ -5,14 +5,15 @@ Bundle. It reviews GitHub pull requests and posts focused review comments.
 
 The fleet checks changes for correctness bugs, security risks, and missing
 tests. It can read pull request data and post comments. It cannot push, merge,
-approve, or close a pull request.
+approve, or close a pull request. Operator chat steers can save a short summary
+of lasting preferences and task progress for later steers.
 
 ## Bundle contents
 
 | File | Purpose |
 |---|---|
-| `SKILL.md` | Defines the review goal, steps, and safety limits. |
-| `TRIGGER.md` | Declares the GitHub event, tool, credential, network, and budget policy. |
+| `SKILL.md` | Defines the review goal, steer memory, steps, and safety limits. |
+| `TRIGGER.md` | Declares the GitHub event, memory tools, credential, network, and budget policy. |
 
 Both files use `github-pr-reviewer` as the bundle name. `agentsfleet` rejects a
 bundle when these names differ.
@@ -101,6 +102,22 @@ Event Stream
 
 The event stream should show a GitHub event. The pull request should contain
 the fleet's review comments.
+
+## Chat memory
+
+For an operator steer without a pull request event, the fleet saves lasting
+facts, preferences, and task updates under stable `operator_context:` keys.
+When you ask about an earlier steer, it reads those entries before answering.
+It does not save credentials or full chat transcripts. The entries belong to
+this fleet, so keep the same Fleet ID for later steers.
+
+After telling the fleet to remember a fact, inspect the saved entry:
+
+```bash
+agentsfleet memory list --fleet <FLEET_ID>
+```
+
+Ask about that fact in a later steer to check recall.
 
 ## Repository ownership
 
