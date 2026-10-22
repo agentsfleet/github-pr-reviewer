@@ -116,8 +116,6 @@ This repository owns only the `github-pr-reviewer` Fleet Bundle.
 
 - [`agentsfleet/platform-ops`](https://github.com/agentsfleet/platform-ops)
   owns the `platform-ops` Fleet Bundle.
-- [`agentsfleet/skills`](https://github.com/agentsfleet/skills) owns host-side
-  skills, including `/agentsfleet-install-platform-ops`.
 
 An installation skill teaches Claude Code, Codex CLI, Amp, or another host how
 to install a fleet. It is not part of the fleet that runs inside `agentsfleet`.
