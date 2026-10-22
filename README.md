@@ -1,5 +1,13 @@
 # GitHub Pull Request reviewer
 
+> [!IMPORTANT]
+> **This repository is sunset and archived.**
+> [`agentsfleet`](https://github.com/agentsfleet/agentsfleet) now allows a user
+> to author their own fleets directly, so this standalone Fleet Bundle is no
+> longer maintained. Use
+> [github.com/agentsfleet/agentsfleet](https://github.com/agentsfleet/agentsfleet)
+> instead. The content below is kept for reference only.
+
 `github-pr-reviewer` is an [`agentsfleet`](https://agentsfleet.net) Fleet
 Bundle. It reviews GitHub pull requests and posts focused review comments.
 
